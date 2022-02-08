@@ -19,16 +19,6 @@ public class TransformManager : MonoBehaviour
 
     [SerializeField] private Material red;
     [SerializeField] private Material blue;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Cheese")

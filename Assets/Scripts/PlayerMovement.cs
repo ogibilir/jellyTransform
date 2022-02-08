@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 
     public static float _stopTime;
 
-
     void Start()
     {
         _stopTime = -1;
@@ -25,10 +24,5 @@ public class PlayerMovement : MonoBehaviour
         {
             _stopTime -= Time.deltaTime;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-       
     }
 }
