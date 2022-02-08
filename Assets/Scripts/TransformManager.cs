@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TransformManager : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private GameObject _circle;
     [SerializeField] private GameObject _circleRenderer;
 
-    [SerializeField] private List<GameObject> _white;
-    [SerializeField] private List<GameObject> _black;
+    [SerializeField] private List<GameObject> _heart;
+    [SerializeField] private List<GameObject> _star;
+    [SerializeField] private List<GameObject> _snow;
 
 
     public ParticleSystem particle;
@@ -21,7 +23,25 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private Material blue;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Cheese")
+        #region Kaybetme
+        if (other.tag == "Saw" || other.tag == "Spikes")
+        {
+
+        }
+        if(other.tag == "Space")
+        {
+            Destroy(Camera.main.gameObject.GetComponent<CameraScript>());
+            Destroy(gameObject.GetComponent<PlayerMovement>());
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            gameObject.GetComponent<Collider>().isTrigger = true;
+            Vector3 currentPos = transform.position;
+            Vector3 diePos = new Vector3(transform.position.x, -120f, transform.position.z);
+            Debug.Log("Oyunu bitir");
+            transform.DOMoveY(-6f, 2f).SetEase(Ease.InOutElastic);
+        }
+        #endregion
+        #region Sekil Degistirme
+        if (other.gameObject.tag == "Comb")
         {
             PlayerMovement._stopTime = 2f;
             if (gameObject.layer == 8)
@@ -36,7 +56,7 @@ public class TransformManager : MonoBehaviour
             particle.Play();
             gameObject.layer = 10;
         }
-        if (other.tag == "Circle")
+        if (other.tag == "Cube")
         {
             PlayerMovement._stopTime = 2f;
             if (gameObject.layer == 10)
@@ -51,7 +71,7 @@ public class TransformManager : MonoBehaviour
             particle.Play();
             gameObject.layer = 8;
         }
-        if (other.tag == "Pie")
+        if (other.tag == "Clasp")
         {
             PlayerMovement._stopTime = 2f;
             if (gameObject.layer == 8)
@@ -66,35 +86,32 @@ public class TransformManager : MonoBehaviour
             particle.Play();
             gameObject.layer = 9;
         }
-        if (other.tag == "Black")
+        #endregion
+        #region Dokme islemi
+        if (other.tag == "Star")
         {
-            PlayerMovement._stopTime = 2f;
-            var Obj = other.transform.GetChild(0);
-            Obj.gameObject.SetActive(true);
-            for (int i = 0; i < _white.Count; i++)
+            for (int i = 0; i < _star.Count; i++)
             {
-                _white[i].SetActive(false);
-            }
-            for (int i = 0; i < _black.Count; i++)
-            {
-                _black[i].SetActive(true);
+                _star[i].SetActive(true);
             }
         }
-        if (other.tag == "White")
+        if (other.tag == "Heart")
         {
-            PlayerMovement._stopTime = 2f;
-            var Obj = other.transform.GetChild(0);
-            Obj.gameObject.SetActive(true);
-            for (int i = 0; i < _white.Count; i++)
+            for (int i = 0; i < _heart.Count; i++)
             {
-                _white[i].SetActive(true);
-            }
-            for (int i = 0; i < _black.Count; i++)
-            {
-                _black[i].SetActive(false);
+                _heart[i].SetActive(true);
             }
         }
-        if(other.tag == "RedColor")
+        if(other.tag == "Snow")
+        {
+            for (int i = 0; i < _heart.Count; i++)
+            {
+                _snow[i].SetActive(true);
+            }
+        }
+        #endregion
+        #region Renk Degistirme
+        if (other.tag == "RedColor")
         {
             _circleRenderer.GetComponent<Renderer>().material = red;
             _cheeseRenderer.GetComponent<Renderer>().material = red;
@@ -106,5 +123,6 @@ public class TransformManager : MonoBehaviour
             _cheeseRenderer.GetComponent<Renderer>().material = blue;
             _pieRenderer.GetComponent<Renderer>().material = blue;
         }
+        #endregion
     }
 }

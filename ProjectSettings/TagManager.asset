@@ -11,6 +11,14 @@ TagManager:
   - FxTemporaire
   - BlueColor
   - RedColor
+  - Spikes
+  - Saw
+  - Comb
+  - Clasp
+  - Star
+  - Snow
+  - Heart
+  - Space
   layers:
   - Default
   - TransparentFX
