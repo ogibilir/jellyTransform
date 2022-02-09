@@ -19,6 +19,7 @@ TagManager:
   - Snow
   - Heart
   - Space
+  - Freeze
   layers:
   - Default
   - TransparentFX
