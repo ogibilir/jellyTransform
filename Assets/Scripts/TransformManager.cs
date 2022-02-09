@@ -22,11 +22,15 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private ParticleSystem _heartParticle;
     [SerializeField] private ParticleSystem _starParticle;
 
+    [SerializeField] private GameObject _spawnPos;
+
 
     public ParticleSystem particle;
+    [SerializeField] private FinishMovement _finishMovement;
 
     [SerializeField] private Material red;
     [SerializeField] private Material blue;
+
     private void OnTriggerEnter(Collider other)
     {
         #region Kaybetme
@@ -172,6 +176,14 @@ public class TransformManager : MonoBehaviour
         {
             PlayerMovement._stopTime = 2f;
             StartCoroutine(DisableCamera());
+            Destroy(_cheeseRenderer.GetComponent<JellyMesh>());
+            Destroy(_circleRenderer.GetComponent<JellyMesh>());
+            Destroy(_pieRenderer.GetComponent<JellyMesh>());
+        }
+        if(other.tag == "Finish")
+        {
+            StartCoroutine(FinishSpawning());
+            
         }
         #endregion
     }
@@ -200,5 +212,18 @@ public class TransformManager : MonoBehaviour
         _snowParticle.gameObject.SetActive(false);
         _heartParticle.gameObject.SetActive(false);
         _starParticle.gameObject.SetActive(false);
+    }
+    public IEnumerator FinishSpawning()
+    {
+        transform.DOMoveX(0, 1f);
+        PlayerMovement.isFinish = true;
+        yield return new WaitForSeconds(2f);
+        transform.DOMove(_spawnPos.transform.position, 1f);
+        yield return new WaitForSeconds(1f);
+        var currentGameObject = Instantiate(gameObject, _spawnPos.transform.position, Quaternion.Euler(-90f, 0, 0));
+        Destroy(currentGameObject.gameObject.GetComponent<Rigidbody>());
+        Destroy(currentGameObject.gameObject.GetComponent<PlayerMovement>());
+        Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
+        Destroy(gameObject);
     }
 }
