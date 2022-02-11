@@ -3,7 +3,42 @@ guid: 3ebd95592e24b0b478c5d82230bf08b0
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baski1
+    second: {fileID: 2100000, guid: 26c9650b86232ac409a62ef303ad0509, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baski2
+    second: {fileID: 2100000, guid: 79fcd87526eb3c243911627f22395460, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baski3
+    second: {fileID: 2100000, guid: b78cc8be3c7d6254793e3e83234a6999, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baski4
+    second: {fileID: 2100000, guid: ff74133ed8cb8b248a62faceaadf77c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tabela
+    second: {fileID: 2100000, guid: 7d27581acdd194f4bb32ff13604e9c2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tabelaic
+    second: {fileID: 2100000, guid: 6b20b03880b9b254f8099ac8ac17e72b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: taraktabela
+    second: {fileID: 2100000, guid: 6034bccdb4a9dd748aca6c3e7e5ceff1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
