@@ -22,6 +22,10 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private ParticleSystem _heartParticle;
     [SerializeField] private ParticleSystem _starParticle;
 
+    [SerializeField] private ParticleSystem _heartExplosion;
+    [SerializeField] private ParticleSystem _snowExplosion;
+    [SerializeField] private ParticleSystem _starExplosion;
+
     [SerializeField] private GameObject _spawnPos;
 
 
@@ -130,7 +134,15 @@ public class TransformManager : MonoBehaviour
             {
                 _star[i].SetActive(true);
                 _lastParticle.Add(_star[i]);
-            }            
+            }
+            if (!_starExplosion.gameObject.activeInHierarchy)
+            {
+                _starExplosion.gameObject.SetActive(true);
+            }
+            else
+            {
+                _starExplosion.Play();
+            }
         }
         if (other.tag == "Heart")
         {
@@ -142,7 +154,15 @@ public class TransformManager : MonoBehaviour
             {
                 _heart[i].SetActive(true);
                 _lastParticle.Add(_heart[i]);
-            }           
+            }
+            if (!_heartExplosion.gameObject.activeInHierarchy)
+            {
+                _heartExplosion.gameObject.SetActive(true);
+            }
+            else
+            {
+                _heartExplosion.Play();
+            }
         }
         if(other.tag == "Snow")
         {
@@ -154,6 +174,14 @@ public class TransformManager : MonoBehaviour
             {
                 _snow[i].SetActive(true);
                 _lastParticle.Add(_snow[i]);
+            }
+            if (!_snowExplosion.gameObject.activeInHierarchy)
+            {
+                _snowExplosion.gameObject.SetActive(true);
+            }
+            else
+            {
+                _snowExplosion.Play();
             }
         }
         #endregion
@@ -217,6 +245,9 @@ public class TransformManager : MonoBehaviour
     {
         transform.DOMoveX(0, 1f);
         PlayerMovement.isFinish = true;
+        _heartExplosion.gameObject.SetActive(false);
+        _snowExplosion.gameObject.SetActive(false);
+        _starExplosion.gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
         transform.DOMove(_spawnPos.transform.position, 1f);
         yield return new WaitForSeconds(1f);

@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public static bool isFinish;
 
     public static float _stopTime;
+    public Touch _touch;
+
+    public float _touchBoarder;
 
     void Start()
     {
@@ -19,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_stopTime < 1 && !isFinish)
         {
-            float horizontal = Input.GetAxis("Horizontal") * _xSpeed * Time.deltaTime;
-            transform.Translate(horizontal, 0, _zSpeed * Time.deltaTime);
+            PlayerMovementAndroid();
+            transform.Translate(0, 0, _zSpeed*Time.deltaTime);
         }
         if (isFinish)
         {
@@ -30,5 +33,32 @@ public class PlayerMovement : MonoBehaviour
         {
             _stopTime -= Time.deltaTime;
         }
+        if(transform.position.x < -4f)
+        {
+            transform.position = new Vector3(-4f, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > 4f)
+        {
+            transform.position = new Vector3(4f, transform.position.y, transform.position.z);
+        }
+    }
+    public void PlayerMovementAndroid()
+    {
+        if(Input.touchCount > 0)
+        {
+            _touch = Input.GetTouch(0);
+            _touchBoarder = transform.position.x + _touch.deltaPosition.x * (_xSpeed * Time.deltaTime);
+
+            if(_touch.phase == TouchPhase.Moved)
+            {
+                transform.position = new Vector3(_touchBoarder, transform.position.y, transform.position.z);
+                
+            }
+        }
+    }
+    public void PlayerMovementPC()
+    {
+        float horizontal = Input.GetAxis("Horizontal") * _xSpeed * Time.deltaTime;
+        transform.Translate(horizontal, 0, _zSpeed * Time.deltaTime);
     }
 }
