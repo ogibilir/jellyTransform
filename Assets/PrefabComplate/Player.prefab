@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 3397874271660132120}
   - component: {fileID: 1767793906074962109}
   - component: {fileID: 4570168979416562807}
+  - component: {fileID: 2708695282132761307}
   m_Layer: 0
   m_Name: toka
   m_TagString: Untagged
@@ -185,6 +186,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2708695282132761307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624609061534801314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce71ead511d42a54cbdb598623273f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Intensity: 1
+  Mass: 1
+  Stiffnes: 1
+  damping: 0.75
 --- !u!1 &4327382492405897147
 GameObject:
   m_ObjectHideFlags: 0
@@ -22833,13 +22850,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc0562e923d0cf9448bba7acdb82e626, type: 3}
---- !u!198 &8043722645676581827 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19870982, guid: cc0562e923d0cf9448bba7acdb82e626, type: 3}
-  m_PrefabInstance: {fileID: 8043722645662750405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8043722645662404123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 481502, guid: cc0562e923d0cf9448bba7acdb82e626, type: 3}
+  m_PrefabInstance: {fileID: 8043722645662750405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8043722645676581827 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19870982, guid: cc0562e923d0cf9448bba7acdb82e626, type: 3}
   m_PrefabInstance: {fileID: 8043722645662750405}
   m_PrefabAsset: {fileID: 0}
