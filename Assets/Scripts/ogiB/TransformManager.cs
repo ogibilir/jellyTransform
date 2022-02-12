@@ -44,7 +44,7 @@ public class TransformManager : MonoBehaviour
             {
                 StartCoroutine(StopParticle(_lastParticle[0].name));
             }
-            StartCoroutine(DisableCamera());
+            StartCoroutine(DisableCamera(1f));
             transform.DOJump(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z - 2),3f,1,1f);
             if(other.tag == "Spikes")
             {
@@ -76,8 +76,8 @@ public class TransformManager : MonoBehaviour
         #region Sekil Degistirme
         if (other.gameObject.tag == "Comb")
         {
-            StartCoroutine(DisableCamera());
-            PlayerMovement._stopTime = 2f;
+            StartCoroutine(DisableCamera(0.5f));
+            PlayerMovement._stopTime = 1.5f;
             if (gameObject.layer == 8)
             {
                 _circle.SetActive(false);
@@ -92,8 +92,8 @@ public class TransformManager : MonoBehaviour
         }
         if (other.tag == "Cube")
         {
-            StartCoroutine(DisableCamera());
-            PlayerMovement._stopTime = 2f;
+            StartCoroutine(DisableCamera(0.5f));
+            PlayerMovement._stopTime = 1.5f;
             if (gameObject.layer == 10)
             {
                 _cheese.SetActive(false);
@@ -108,8 +108,8 @@ public class TransformManager : MonoBehaviour
         }
         if (other.tag == "Clasp")
         {
-            StartCoroutine(DisableCamera());
-            PlayerMovement._stopTime = 2f;
+            StartCoroutine(DisableCamera(0.5f));
+            PlayerMovement._stopTime = 1.5f;
             if (gameObject.layer == 8)
             {
                 _circle.SetActive(false);
@@ -203,10 +203,15 @@ public class TransformManager : MonoBehaviour
         if(other.tag == "Freeze")
         {
             PlayerMovement._stopTime = 2f;
-            StartCoroutine(DisableCamera());
+            StartCoroutine(DisableCamera(1f));
             Destroy(_cheeseRenderer.GetComponent<JellyMesh>());
             Destroy(_circleRenderer.GetComponent<JellyMesh>());
             Destroy(_pieRenderer.GetComponent<JellyMesh>());
+            Color color = _cheeseRenderer.GetComponent<Renderer>().material.color;
+            color = new Color(color.r, color.g, color.b, 1f);
+            _cheeseRenderer.GetComponent<Renderer>().material.color = color;
+            _pieRenderer.GetComponent<Renderer>().material.color = color;
+            _circleRenderer.GetComponent<Renderer>().material.color = color;
         }
         if(other.tag == "Finish")
         {
@@ -215,10 +220,10 @@ public class TransformManager : MonoBehaviour
         }
         #endregion
     }
-    public IEnumerator DisableCamera()
+    public IEnumerator DisableCamera(float time)
     {
         Camera.main.gameObject.GetComponent<CameraScript>().enabled = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(time);
         Camera.main.gameObject.GetComponent<CameraScript>().enabled = true;
     }
     public IEnumerator StopParticle(string lastparticle)
