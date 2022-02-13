@@ -27,6 +27,7 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private ParticleSystem _starExplosion;
 
     [SerializeField] private GameObject _spawnPos;
+    [SerializeField] private GameObject _girlGameObject;
 
 
     public ParticleSystem particle;
@@ -248,6 +249,7 @@ public class TransformManager : MonoBehaviour
     }
     public IEnumerator FinishSpawning()
     {
+        Animator anim = _girlGameObject.GetComponent<Animator>();
         transform.DOMoveX(0, 1f);
         PlayerMovement.isFinish = true;
         _heartExplosion.gameObject.SetActive(false);
@@ -257,6 +259,8 @@ public class TransformManager : MonoBehaviour
         transform.DOMove(_spawnPos.transform.position, 1f);
         yield return new WaitForSeconds(1f);
         var currentGameObject = Instantiate(gameObject, _spawnPos.transform.position, Quaternion.Euler(-90f, 0, 0));
+        currentGameObject.transform.parent = _spawnPos.transform;
+        anim.SetTrigger("Win");
         Destroy(currentGameObject.gameObject.GetComponent<Rigidbody>());
         Destroy(currentGameObject.gameObject.GetComponent<PlayerMovement>());
         Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
