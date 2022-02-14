@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using DG.Tweening;
 
 public class TransformManager : MonoBehaviour
@@ -36,6 +37,11 @@ public class TransformManager : MonoBehaviour
 
     [SerializeField] private Material red;
     [SerializeField] private Material blue;
+
+
+    [SerializeField] private GameObject _restartButton;
+    [SerializeField] private GameObject _continueButton;
+    [SerializeField] private GameObject _instaPanel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -73,6 +79,7 @@ public class TransformManager : MonoBehaviour
             Vector3 diePos = new Vector3(transform.position.x, -120f, transform.position.z);
             Debug.Log("Oyunu bitir");
             transform.DOMoveY(-6f, 1.5f).SetEase(Ease.InOutElastic);
+            StartCoroutine(RestartButton());
         }
         #endregion
         #region Sekil Degistirme
@@ -270,6 +277,17 @@ public class TransformManager : MonoBehaviour
         Destroy(currentGameObject.gameObject.GetComponent<Rigidbody>());
         Destroy(currentGameObject.gameObject.GetComponent<PlayerMovement>());
         Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
+        StartCoroutine(DisableCamera(8f));
+        yield return new WaitForSeconds(3f);
+        _instaPanel.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        _continueButton.gameObject.SetActive(true);
+        UIManager.isLike = true;
         Destroy(gameObject);
+    }
+    public IEnumerator RestartButton()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _restartButton.SetActive(true);
     }
 }
