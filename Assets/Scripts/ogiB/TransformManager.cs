@@ -25,6 +25,7 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private ParticleSystem _heartExplosion;
     [SerializeField] private ParticleSystem _snowExplosion;
     [SerializeField] private ParticleSystem _starExplosion;
+    [SerializeField] private ParticleSystem _smokePuff;
 
     [SerializeField] private GameObject _spawnPos;
     [SerializeField] private GameObject _girlGameObject;
@@ -88,7 +89,8 @@ public class TransformManager : MonoBehaviour
                 _pie.SetActive(false);
             }
             _cheese.SetActive(true);
-            particle.Play();
+            _smokePuff.gameObject.SetActive(true);
+            _smokePuff.Play();
             gameObject.layer = 10;
         }
         if (other.tag == "Cube")
@@ -104,8 +106,10 @@ public class TransformManager : MonoBehaviour
                 _pie.SetActive(false);
             }
             _circle.SetActive(true);
-            particle.Play();
+            
             gameObject.layer = 8;
+            _smokePuff.gameObject.SetActive(true);
+            _smokePuff.Play();
         }
         if (other.tag == "Clasp")
         {
@@ -120,8 +124,10 @@ public class TransformManager : MonoBehaviour
                 _cheese.SetActive(false);
             }
             _pie.SetActive(true);
-            particle.Play();
+            
             gameObject.layer = 9;
+            _smokePuff.gameObject.SetActive(true);
+            _smokePuff.Play();
         }
         #endregion
         #region Dokme islemi
