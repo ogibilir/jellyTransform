@@ -85,20 +85,14 @@ public class TransformManager : MonoBehaviour
         #region Sekil Degistirme
         if (other.gameObject.tag == "Comb")
         {
+            Animator anim = other.GetComponent<Animator>();
+            anim.SetTrigger("Baskı");
             StartCoroutine(DisableCamera(0.5f));
             PlayerMovement._stopTime = 1.5f;
-            if (gameObject.layer == 8)
-            {
-                _circle.SetActive(false);
-            }
-            else if (gameObject.layer == 9)
-            {
-                _pie.SetActive(false);
-            }
-            _cheese.SetActive(true);
+            StartCoroutine(CreateComb());
             _smokePuff.gameObject.SetActive(true);
             _smokePuff.Play();
-            gameObject.layer = 10;
+            Destroy(other.GetComponent<Collider>());
         }
         if (other.tag == "Cube")
         {
@@ -117,24 +111,18 @@ public class TransformManager : MonoBehaviour
             gameObject.layer = 8;
             _smokePuff.gameObject.SetActive(true);
             _smokePuff.Play();
+            Destroy(other.GetComponent<Collider>());
         }
         if (other.tag == "Clasp")
         {
+            Animator anim = other.GetComponent<Animator>();
+            anim.SetTrigger("Baskı");
             StartCoroutine(DisableCamera(0.5f));
             PlayerMovement._stopTime = 1.5f;
-            if (gameObject.layer == 8)
-            {
-                _circle.SetActive(false);
-            }
-            else if (gameObject.layer == 10)
-            {
-                _cheese.SetActive(false);
-            }
-            _pie.SetActive(true);
-            
-            gameObject.layer = 9;
+            StartCoroutine(CreateClasp());
             _smokePuff.gameObject.SetActive(true);
             _smokePuff.Play();
+            Destroy(other.GetComponent<Collider>());
         }
         #endregion
         #region Dokme islemi
@@ -216,8 +204,8 @@ public class TransformManager : MonoBehaviour
         #region Bitis
         if(other.tag == "Freeze")
         {
-            PlayerMovement._stopTime = 2f;
-            StartCoroutine(DisableCamera(1f));
+            //PlayerMovement._stopTime = 2f;
+            //StartCoroutine(DisableCamera(1f));
             Destroy(_cheeseRenderer.GetComponent<JellyMesh>());
             Destroy(_circleRenderer.GetComponent<JellyMesh>());
             Destroy(_pieRenderer.GetComponent<JellyMesh>());
@@ -279,15 +267,43 @@ public class TransformManager : MonoBehaviour
         Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
         StartCoroutine(DisableCamera(8f));
         yield return new WaitForSeconds(3f);
+        UIManager.isLike = true;
         _instaPanel.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         _continueButton.gameObject.SetActive(true);
-        UIManager.isLike = true;
         Destroy(gameObject);
     }
     public IEnumerator RestartButton()
     {
         yield return new WaitForSeconds(1.5f);
         _restartButton.SetActive(true);
+    }
+    public IEnumerator CreateComb()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (gameObject.layer == 8)
+        {
+            _circle.SetActive(false);
+        }
+        else if (gameObject.layer == 9)
+        {
+            _pie.SetActive(false);
+        }
+        _cheese.SetActive(true);
+        gameObject.layer = 10;
+    }
+    public IEnumerator CreateClasp()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (gameObject.layer == 8)
+        {
+            _circle.SetActive(false);
+        }
+        else if (gameObject.layer == 10)
+        {
+            _cheese.SetActive(false);
+        }
+        _pie.SetActive(true);
+        gameObject.layer = 9;
     }
 }
