@@ -57,7 +57,7 @@ public class TransformManager : MonoBehaviour
             if(other.tag == "Spikes")
             {
                 Destroy(other.gameObject.GetComponent<Collider>());
-                other.transform.DOMoveY(-1f, 2f);
+                other.transform.DOMoveY(-1f, 1.5f);
             }   
             if (_lastParticle.Count != 0)
             {
