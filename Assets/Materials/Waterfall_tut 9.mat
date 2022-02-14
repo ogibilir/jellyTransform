@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Waterfall_tut 2
+  m_Name: Waterfall_tut 9
   m_Shader: {fileID: -6465566751694194690, guid: 50314ad2a4829a544bb673c55f0c3961, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -78,7 +78,7 @@ Material:
     m_Floats:
     - Vector1_0baf05def57f481b83176ba9499aea8d: 10
     - Vector1_4fce5a7d9d7348a1b594c851d427abb4: 1
-    - Vector1_63fcb2e470504c319248389de06251bc: 0.72
+    - Vector1_63fcb2e470504c319248389de06251bc: -0.48
     - Vector1_84e6d743ed7e48ac94844900e572bf34: 0.12
     - Vector1_920b0cb95e644bc58aeb261a4b9ab07a: 1.4
     - Vector1_a02b90d910974f1f8097fe4bead29bc3: 0.1
@@ -114,11 +114,11 @@ Material:
     - Vector2_2c779013ccfe425e818e64ca3b1a0a1f: {r: 1.2, g: 0.6, b: 0, a: 0}
     - Vector2_73b549747aba4db0aaf7fd95929f60c3: {r: 0, g: 0.5, b: 0, a: 0}
     - Vector2_7883ee98264e4f6ab1924bd4bd1fa927: {r: 0, g: 0.2, b: 0, a: 0}
-    - _BaseColor: {r: 0.9911022, g: 0.46778384, b: 0.590619, a: 1}
+    - _BaseColor: {r: 0.45009238, g: 0.2663314, b: 0.990566, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _VoronoiColor: {r: 0.9911022, g: 0.46778384, b: 0.590619, a: 1}
+    - _VoronoiColor: {r: 0.34777093, g: 0.11569952, b: 0.9811321, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8128650614359757066
 MonoBehaviour:

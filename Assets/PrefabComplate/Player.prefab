@@ -1526,6 +1526,7 @@ MonoBehaviour:
   _snowExplosion: {fileID: 2395514384589612972}
   _starExplosion: {fileID: 3156685950031251247}
   _spawnPos: {fileID: 0}
+  _girlGameObject: {fileID: 0}
   particle: {fileID: 0}
   _finishMovement: {fileID: 4327382493395605121}
   red: {fileID: 2100000, guid: b6db71050022fcf41a28b0a639eb281a, type: 2}
@@ -22701,10 +22702,6 @@ PrefabInstance:
     - target: {fileID: 5665414551708162080, guid: 3f047df4db316be459c5b12826a93430, type: 3}
       propertyPath: m_Name
       value: SnowExplosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5665414551708162080, guid: 3f047df4db316be459c5b12826a93430, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f047df4db316be459c5b12826a93430, type: 3}
