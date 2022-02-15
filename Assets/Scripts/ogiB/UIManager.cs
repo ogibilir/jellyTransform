@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
             likeNumber++;
         }
         text.text = likeNumber.ToString();
+        Debug.Log(SceneManager.sceneCountInBuildSettings);
     }
     public void RestartButton()
     {
@@ -41,9 +42,9 @@ public class UIManager : MonoBehaviour
     public void ContinueButton()
     {
         Debug.Log("Olduuuu");
-        if (_currentScene != SceneManager.GetSceneAt(SceneManager.sceneCount - 1))
+        if (_currentScene.buildIndex != SceneManager.sceneCountInBuildSettings-1)
         {
-
+            SceneManager.LoadScene(_currentScene.buildIndex + 1);
         }
     }
 }
