@@ -34,6 +34,7 @@ public class TransformManager : MonoBehaviour
 
     public ParticleSystem particle;
     [SerializeField] private FinishMovement _finishMovement;
+    [SerializeField] private GameObject CombMovement;
 
     [SerializeField] private Material red;
     [SerializeField] private Material blue;
@@ -42,6 +43,9 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private GameObject _restartButton;
     [SerializeField] private GameObject _continueButton;
     [SerializeField] private GameObject _instaPanel;
+
+
+    private bool isWin;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -259,18 +263,59 @@ public class TransformManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         transform.DOMove(_spawnPos.transform.position, 1f);
         yield return new WaitForSeconds(1f);
-        var currentGameObject = Instantiate(gameObject, _spawnPos.transform.position, Quaternion.Euler(-90f, 0, 0));
-        currentGameObject.transform.parent = _spawnPos.transform;
-        anim.SetTrigger("Win");
-        Destroy(currentGameObject.gameObject.GetComponent<Rigidbody>());
-        Destroy(currentGameObject.gameObject.GetComponent<PlayerMovement>());
-        Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
+        if(gameObject.layer == 9)
+        {
+            CombMovement.SetActive(true);
+            var currentGameObject1 = Instantiate(gameObject, CombMovement.transform.position, Quaternion.Euler(0, 180, 180));
+            currentGameObject1.transform.parent = _spawnPos.transform;
+            Destroy(currentGameObject1.gameObject.GetComponent<Rigidbody>());
+            Destroy(currentGameObject1.gameObject.GetComponent<PlayerMovement>());
+            Destroy(currentGameObject1.gameObject.GetComponent<TransformManager>());
+            currentGameObject1.transform.parent = CombMovement.transform;
+        }
+        if(gameObject.layer == 10)
+        {
+            var currentGameObject = Instantiate(gameObject, _spawnPos.transform.position, Quaternion.Euler(-90f, 0, 0));
+            currentGameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            currentGameObject.transform.parent = _spawnPos.transform;
+            Destroy(currentGameObject.gameObject.GetComponent<Rigidbody>());
+            Destroy(currentGameObject.gameObject.GetComponent<PlayerMovement>());
+            Destroy(currentGameObject.gameObject.GetComponent<TransformManager>());
+            currentGameObject.transform.parent = _spawnPos.transform;
+        }
+        _cheeseRenderer.SetActive(false);
+        _circleRenderer.SetActive(false);
+        _pieRenderer.SetActive(false);
+        if (gameObject.layer == 8)
+        {
+            anim.SetTrigger("Sad");
+            isWin = false;
+        }
+        else
+        {
+            anim.SetTrigger("Win");
+            isWin = true;
+        }
         StartCoroutine(DisableCamera(8f));
         yield return new WaitForSeconds(3f);
-        UIManager.isLike = true;
+        if(gameObject.layer == 8)
+        {
+            UIManager.isSad = true;
+        }
+        else
+        {
+            UIManager.isLike = true;
+        }
         _instaPanel.SetActive(true);
         yield return new WaitForSeconds(1.5f);
-        _continueButton.gameObject.SetActive(true);
+        if (isWin)
+        {
+            _continueButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            _restartButton.gameObject.SetActive(true);
+        }
         Destroy(gameObject);
     }
     public IEnumerator RestartButton()

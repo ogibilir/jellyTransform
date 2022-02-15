@@ -8,13 +8,16 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static bool isLike;
+    public static bool isSad;
     public int likeNumber;
     public TextMeshProUGUI text;
     private Scene _currentScene;
     public int counter;
+    public int counter2;
     void Start()
     {
         counter = Random.Range(10000, 30000);
+        counter2 = Random.Range(10, 20);
         isLike = false;
         likeNumber = 0;
         _currentScene = SceneManager.GetActiveScene();
@@ -24,6 +27,10 @@ public class UIManager : MonoBehaviour
         if (isLike && likeNumber < counter)
         {
             likeNumber += 133;
+        }
+        if(isSad && likeNumber < counter2)
+        {
+            likeNumber++;
         }
         text.text = likeNumber.ToString();
     }
