@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
     }
     public void ContinueButton()
     {
+        Debug.Log("Olduuuu");
         if (_currentScene != SceneManager.GetSceneAt(SceneManager.sceneCount - 1))
         {
 
