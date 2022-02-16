@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public static bool isSad;
     public int likeNumber;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI text2;
     private Scene _currentScene;
     public int counter;
     public int counter2;
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     public void Awake()
     {
-        
+
     }
     void Start()
     {
@@ -58,6 +59,7 @@ public class UIManager : MonoBehaviour
             likeNumber++;
         }
         text.text = likeNumber.ToString();
+        text2.text = likeNumber.ToString();
         Debug.Log(SceneManager.sceneCountInBuildSettings);
     }
     public void RestartButton()
@@ -70,6 +72,10 @@ public class UIManager : MonoBehaviour
         if (_currentScene.buildIndex != SceneManager.sceneCountInBuildSettings-1)
         {
             SceneManager.LoadScene(_currentScene.buildIndex + 1);
+        }
+        else if(_currentScene.buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

@@ -255,6 +255,11 @@ public class TransformManager : MonoBehaviour
     }
     public IEnumerator FinishSpawning()
     {
+        Vector3 waitPos = GameObject.Find("FinishCollider").transform.position;
+        Camera.main.gameObject.transform.DOMoveZ(waitPos.z+3, 2);
+        Camera.main.gameObject.transform.DOMoveY(5, 1);
+        Camera.main.gameObject.transform.DORotate(new Vector3(0, 0, 0), 1);
+        Camera.main.gameObject.GetComponent<CameraScript>().target = null;
         Animator anim = _girlGameObject.GetComponent<Animator>();
         transform.DOMoveX(0, 1f);
         PlayerMovement.isFinish = true;
