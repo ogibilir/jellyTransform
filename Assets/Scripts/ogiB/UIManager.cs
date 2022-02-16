@@ -14,8 +14,28 @@ public class UIManager : MonoBehaviour
     private Scene _currentScene;
     public int counter;
     public int counter2;
+
+    public Touch _touch;
+
+    [SerializeField] GameObject _MenuPanel;
+    [SerializeField] GameObject _player;
+
+    public void Awake()
+    {
+        
+    }
     void Start()
     {
+        if (!PlayerPrefs.HasKey("isStart"))
+        {
+            PlayerPrefs.SetInt("isStart", 0);
+        }
+        if (PlayerPrefs.GetInt("isStart") == 0)
+        {
+            _MenuPanel.SetActive(true);
+            _player.GetComponent<PlayerMovement>().enabled = false;
+            PlayerPrefs.SetInt("isStart", 1);
+        }
         counter = Random.Range(10000, 30000);
         counter2 = Random.Range(10, 20);
         isLike = false;
@@ -24,6 +44,11 @@ public class UIManager : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(Input.touchCount > 0)
+        {
+            _MenuPanel.SetActive(false);
+            _player.GetComponent<PlayerMovement>().enabled = true;
+        }
         if (isLike && likeNumber < counter)
         {
             likeNumber += 133;

@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testereplatform(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 3722833452021494346, guid: 105be5e8f75c9af43a01b21dc9ade220, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105be5e8f75c9af43a01b21dc9ade220, type: 3}
 --- !u!4 &1999109235 stripped

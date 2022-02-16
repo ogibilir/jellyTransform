@@ -43,6 +43,7 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private GameObject _restartButton;
     [SerializeField] private GameObject _continueButton;
     [SerializeField] private GameObject _instaPanel;
+    [SerializeField] private GameObject _backGround;
 
 
     private bool isWin;
@@ -307,6 +308,7 @@ public class TransformManager : MonoBehaviour
             UIManager.isLike = true;
         }
         _instaPanel.SetActive(true);
+        _backGround.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         if (isWin)
         {

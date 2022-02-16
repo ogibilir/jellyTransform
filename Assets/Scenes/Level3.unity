@@ -479,6 +479,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052260661}
   m_Mesh: {fileID: 89712945287117100, guid: 5b6047bdf804ead48897ea4dc1192075, type: 3}
+--- !u!1 &1079288849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2207962847070749886, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
+  m_PrefabInstance: {fileID: 2129253723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1117019592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1105,10 @@ PrefabInstance:
     - target: {fileID: 3722833451811404999, guid: 105be5e8f75c9af43a01b21dc9ade220, type: 3}
       propertyPath: m_Name
       value: testereplatform(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722833452021494346, guid: 105be5e8f75c9af43a01b21dc9ade220, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105be5e8f75c9af43a01b21dc9ade220, type: 3}
@@ -1865,34 +1874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1148048250606939060, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250606939062, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250633002737, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250633002751, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Color.b
-      value: 0.90741926
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250633002751, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5235849
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250633002751, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048250633002751, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1148048250990668230, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1977,6 +1958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1148048250990668231, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 6029467038971579448}
     - target: {fileID: 1148048250990668249, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1984,14 +1969,6 @@ PrefabInstance:
     - target: {fileID: 1148048250990668250, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048251347993777, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148048251347993791, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54911d460e8c1c64d8db03fdda5668ed, type: 3}
@@ -3110,6 +3087,10 @@ PrefabInstance:
       propertyPath: _smokePuff
       value: 
       objectReference: {fileID: 8043722645096962748}
+    - target: {fileID: 4327382493395605148, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
+      propertyPath: _backGround
+      value: 
+      objectReference: {fileID: 1079288849}
     - target: {fileID: 4327382493395605148, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: _instaPanel
       value: 
