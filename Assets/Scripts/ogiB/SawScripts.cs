@@ -18,7 +18,7 @@ public class SawScripts : MonoBehaviour
         {
             transform.DOLocalMoveX(_sawLeft, _arriveTime);
         }
-        else if(transform.localPosition.x == _sawLeft)
+        if(transform.localPosition.x == _sawLeft)
         {
             transform.DOLocalMoveX(_sawRight, _arriveTime);
         }
