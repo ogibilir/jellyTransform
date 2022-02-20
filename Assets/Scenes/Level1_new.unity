@@ -2349,15 +2349,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.b
-      value: 0.9960785
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.g
-      value: 0.9960785
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.r
-      value: 0.5411765
+      value: 0.3537736
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825951, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2365,11 +2365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825951, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.109
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825951, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08
+      value: -0.022
       objectReference: {fileID: 0}
     - target: {fileID: 1543270672256903455, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_DirtyAABB
@@ -2642,7 +2642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5198679652500922697, guid: 00f2c6d25b7853d4aa14e93bc7f14222, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 172.19
+      value: 168.88
       objectReference: {fileID: 0}
     - target: {fileID: 5198679652500922697, guid: 00f2c6d25b7853d4aa14e93bc7f14222, type: 3}
       propertyPath: m_LocalRotation.w
