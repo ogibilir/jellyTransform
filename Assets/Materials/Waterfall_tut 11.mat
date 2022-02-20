@@ -114,11 +114,11 @@ Material:
     - Vector2_2c779013ccfe425e818e64ca3b1a0a1f: {r: 1.2, g: 0.6, b: 0, a: 0}
     - Vector2_73b549747aba4db0aaf7fd95929f60c3: {r: 0, g: 0.5, b: 0, a: 0}
     - Vector2_7883ee98264e4f6ab1924bd4bd1fa927: {r: 0, g: 0.2, b: 0, a: 0}
-    - _BaseColor: {r: 0.972549, g: 0.12549019, b: 0.33682474, a: 1}
+    - _BaseColor: {r: 1, g: 0.60011554, b: 0.2688679, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _VoronoiColor: {r: 1, g: 0.0990566, b: 0.4084165, a: 1}
+    - _VoronoiColor: {r: 1, g: 0.45306122, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8128650614359757066
 MonoBehaviour:

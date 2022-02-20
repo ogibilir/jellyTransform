@@ -46,6 +46,9 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private GameObject _backGround;
 
 
+    [SerializeField] private GameObject _dirtyBoiling;
+    [SerializeField] private GameObject _cleanerBoiling;
+
     private bool isWin;
 
     private void OnTriggerEnter(Collider other)
@@ -205,9 +208,18 @@ public class TransformManager : MonoBehaviour
             _cheeseRenderer.GetComponent<Renderer>().material.color = blue.color;
             _pieRenderer.GetComponent<Renderer>().material.color = blue.color;
         }
+        if(other.tag == "Dirty")
+        {
+            _dirtyBoiling.SetActive(true);
+        }
+        if(other.tag == "Cleaner")
+        {
+            _dirtyBoiling.SetActive(false);
+            _cleanerBoiling.SetActive(true);
+        }
         #endregion
         #region Bitis
-        if(other.tag == "Freeze")
+        if (other.tag == "Freeze")
         {
             //PlayerMovement._stopTime = 2f;
             //StartCoroutine(DisableCamera(1f));

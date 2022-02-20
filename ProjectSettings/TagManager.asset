@@ -21,6 +21,9 @@ TagManager:
   - Space
   - Freeze
   - Dene
+  - harmful
+  - Dirty
+  - Cleaner
   layers:
   - Default
   - TransparentFX
