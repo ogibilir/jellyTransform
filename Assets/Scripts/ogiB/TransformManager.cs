@@ -304,19 +304,28 @@ public class TransformManager : MonoBehaviour
         _cheeseRenderer.SetActive(false);
         _circleRenderer.SetActive(false);
         _pieRenderer.SetActive(false);
-        if (gameObject.layer == 8)
+        if(_dirtyBoiling.activeInHierarchy == true)
         {
+            Debug.Log("deneeeee");
             anim.SetTrigger("Sad");
             isWin = false;
         }
         else
         {
-            anim.SetTrigger("Win");
-            isWin = true;
+            if (gameObject.layer == 8)
+            {
+                anim.SetTrigger("Sad");
+                isWin = false;
+            }
+            else
+            {
+                anim.SetTrigger("Win");
+                isWin = true;
+            }
         }
         StartCoroutine(DisableCamera(8f));
         yield return new WaitForSeconds(3f);
-        if(gameObject.layer == 8)
+        if(gameObject.layer == 8 || _dirtyBoiling.activeInHierarchy == true)
         {
             UIManager.isSad = true;
         }
