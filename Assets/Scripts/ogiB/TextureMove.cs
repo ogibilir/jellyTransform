@@ -17,7 +17,7 @@ public class TextureMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         curX += Time.deltaTime * speedX;
         curY += Time.deltaTime * speedY;
