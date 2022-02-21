@@ -49,6 +49,7 @@ public class TransformManager : MonoBehaviour
     [SerializeField] private GameObject _dirtyBoiling;
     [SerializeField] private GameObject _cleanerBoiling;
     [SerializeField] private GameObject _sadEmoji;
+    [SerializeField] private GameObject _shineParticle;
 
     private bool isWin;
 
@@ -259,6 +260,9 @@ public class TransformManager : MonoBehaviour
         {
             //PlayerMovement._stopTime = 2f;
             //StartCoroutine(DisableCamera(1f));
+            _shineParticle.SetActive(true);
+            _smokePuff.gameObject.SetActive(false);
+            _sadEmoji.gameObject.SetActive(false);
             Destroy(_cheeseRenderer.GetComponent<JellyMesh>());
             Destroy(_circleRenderer.GetComponent<JellyMesh>());
             Destroy(_pieRenderer.GetComponent<JellyMesh>());
@@ -331,6 +335,7 @@ public class TransformManager : MonoBehaviour
         }
         if(gameObject.layer == 10)
         {
+            //transform.DORotate(new Vector3(0, 0, 0), 1f);
             var currentGameObject = Instantiate(gameObject, _spawnPos.transform.position, Quaternion.Euler(-90f, 0, 0));
             currentGameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             currentGameObject.transform.parent = _spawnPos.transform;
