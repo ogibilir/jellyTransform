@@ -48,6 +48,7 @@ public class TransformManager : MonoBehaviour
 
     [SerializeField] private GameObject _dirtyBoiling;
     [SerializeField] private GameObject _cleanerBoiling;
+    [SerializeField] private GameObject _sadEmoji;
 
     private bool isWin;
 
@@ -56,6 +57,14 @@ public class TransformManager : MonoBehaviour
         #region Kaybetme
         if (other.tag == "Saw" || other.tag == "Spikes")
         {
+            if (!_sadEmoji.activeInHierarchy)
+            {
+                _sadEmoji.SetActive(true);
+            }
+            else
+            {
+                _sadEmoji.GetComponent<ParticleSystem>().Play();
+            }
             if(_lastParticle.Count != 0)
             {
                 StartCoroutine(StopParticle(_lastParticle[0].name));
@@ -93,6 +102,7 @@ public class TransformManager : MonoBehaviour
         #region Sekil Degistirme
         if (other.gameObject.tag == "Comb")
         {
+            Destroy(other.transform.Find("particle").gameObject);
             Animator anim = other.GetComponent<Animator>();
             anim.SetTrigger("Baskı");
             StartCoroutine(DisableCamera(0.5f));
@@ -123,6 +133,7 @@ public class TransformManager : MonoBehaviour
         }
         if (other.tag == "Clasp")
         {
+            Destroy(other.transform.Find("particle").gameObject);
             Animator anim = other.GetComponent<Animator>();
             anim.SetTrigger("Baskı");
             StartCoroutine(DisableCamera(0.5f));
@@ -267,7 +278,9 @@ public class TransformManager : MonoBehaviour
     public IEnumerator DisableCamera(float time)
     {
         Camera.main.gameObject.GetComponent<CameraScript>().enabled = false;
+        TextureMove.isStop = true;
         yield return new WaitForSeconds(time);
+        TextureMove.isStop = false;
         Camera.main.gameObject.GetComponent<CameraScript>().enabled = true;
     }
     public IEnumerator StopParticle(string lastparticle)

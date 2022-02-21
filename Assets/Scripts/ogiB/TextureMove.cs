@@ -8,10 +8,12 @@ public class TextureMove : MonoBehaviour
     public float speedY = 0.1f;
     private float curX;
     private float curY;
+    public static bool isStop;
 
     // Use this for initialization
     void Start()
     {
+        isStop = false;
         curX = GetComponent<Renderer>().material.mainTextureOffset.x;
         curY = GetComponent<Renderer>().material.mainTextureOffset.y;
     }
@@ -19,8 +21,11 @@ public class TextureMove : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        curX += Time.deltaTime * speedX;
-        curY += Time.deltaTime * speedY;
+        if (!isStop)
+        {
+            curX += Time.deltaTime * speedX;
+            curY += Time.deltaTime * speedY;
+        }
         GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(curX, curY));
     }
 }
