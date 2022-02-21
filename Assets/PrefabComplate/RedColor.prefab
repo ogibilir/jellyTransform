@@ -769,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845289185395825380, guid: 2c6690a307ba0cc44a47eddcd42bbd01, type: 3}
       propertyPath: brush.brushScale
-      value: 0.229
+      value: 0.491
       objectReference: {fileID: 0}
     - target: {fileID: 3845289185395825380, guid: 2c6690a307ba0cc44a47eddcd42bbd01, type: 3}
       propertyPath: brush.brushColor.a

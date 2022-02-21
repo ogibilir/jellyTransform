@@ -198,14 +198,39 @@ public class TransformManager : MonoBehaviour
         #region Renk Degistirme
         if (other.tag == "RedColor")
         {
-            _circleRenderer.GetComponent<Renderer>().material.color = red.color;
-            _cheeseRenderer.GetComponent<Renderer>().material.color = red.color;
-            _pieRenderer.GetComponent<Renderer>().material.color = red.color;
+            if (_circle.activeInHierarchy)
+            {
+                _cheeseRenderer.GetComponent<Renderer>().material.color = red.color;
+                _pieRenderer.GetComponent<Renderer>().material.color = red.color;
+            }
+            else if (_cheese.activeInHierarchy)
+            {
+                _pieRenderer.GetComponent<Renderer>().material.color = red.color;
+                _circleRenderer.GetComponent<Renderer>().material.color = red.color;
+            }
+            else if (_pie.activeInHierarchy)
+            {
+                _circleRenderer.GetComponent<Renderer>().material.color = red.color;
+                _cheeseRenderer.GetComponent<Renderer>().material.color = red.color;
+            }
         }
         if (other.tag == "BlueColor")
         {
-            _circleRenderer.GetComponent<Renderer>().material.color = blue.color;
-            _cheeseRenderer.GetComponent<Renderer>().material.color = blue.color;
+            if (_circle.activeInHierarchy)
+            {
+                _cheeseRenderer.GetComponent<Renderer>().material.color = blue.color;
+                _pieRenderer.GetComponent<Renderer>().material.color = blue.color;
+            }
+            else if (_cheese.activeInHierarchy)
+            {
+                _pieRenderer.GetComponent<Renderer>().material.color = blue.color;
+                _circleRenderer.GetComponent<Renderer>().material.color = blue.color;
+            }
+            else if (_pie.activeInHierarchy)
+            {
+                _circleRenderer.GetComponent<Renderer>().material.color = blue.color;
+                _cheeseRenderer.GetComponent<Renderer>().material.color = blue.color;
+            }
             _pieRenderer.GetComponent<Renderer>().material.color = blue.color;
         }
         if(other.tag == "Dirty")

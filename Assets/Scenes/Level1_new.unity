@@ -775,11 +775,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3845289185395825377, guid: 2c6690a307ba0cc44a47eddcd42bbd01, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c6690a307ba0cc44a47eddcd42bbd01, type: 3}
---- !u!198 &1603899817 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1950363668014938344, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
-  m_PrefabInstance: {fileID: 8043722645096962747}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1549,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1917471729819727281, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.472309
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917471729819727281, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4425
+      objectReference: {fileID: 0}
     - target: {fileID: 2423037566847627348, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
       propertyPath: brush.brushColor.a
       value: 1
@@ -2158,6 +2161,10 @@ PrefabInstance:
       value: BlueColor
       objectReference: {fileID: 0}
     - target: {fileID: 3590309180239892002, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590309180239892002, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_Center.z
       value: 1.6
       objectReference: {fileID: 0}
@@ -2177,6 +2184,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f145616ef9f89e9478ece5a3d976b3e2, type: 2}
+    - target: {fileID: 8721947625987613059, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5489032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721947625987613059, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5747
+      objectReference: {fileID: 0}
     - target: {fileID: 8925755033500019514, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2713,7 +2728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4327382493395605145, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.18
+      value: -3.86
       objectReference: {fileID: 0}
     - target: {fileID: 4327382493395605145, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2751,10 +2766,6 @@ PrefabInstance:
       propertyPath: _spawnPos
       value: 
       objectReference: {fileID: 1860309514}
-    - target: {fileID: 4327382493395605148, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
-      propertyPath: _smokePuff
-      value: 
-      objectReference: {fileID: 1603899817}
     - target: {fileID: 4327382493395605148, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: _backGround
       value: 
@@ -2822,6 +2833,10 @@ PrefabInstance:
     - target: {fileID: 4327382493661957854, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: m_LocalScale.z
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327382493661957854, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4327382493661957855, guid: 66fe28ad4e42d2f4f98d2a5c64b48377, type: 3}
       propertyPath: m_IsActive
