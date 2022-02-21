@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 0
-  speedY: 2.5
+  speedY: 1.5
 --- !u!65 &1511656036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1625,16 +1625,20 @@ PrefabInstance:
       value: 2.028
       objectReference: {fileID: 0}
     - target: {fileID: 2423037566847627348, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
+      propertyPath: brush.brushColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423037566847627348, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
       propertyPath: brush.brushColor.b
-      value: 0.9960785
+      value: 0.8207547
       objectReference: {fileID: 0}
     - target: {fileID: 2423037566847627348, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
       propertyPath: brush.brushColor.g
-      value: 0.5568628
+      value: 0.127759
       objectReference: {fileID: 0}
     - target: {fileID: 2423037566847627348, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
       propertyPath: brush.brushColor.r
-      value: 0.72156864
+      value: 0.3876324
       objectReference: {fileID: 0}
     - target: {fileID: 2423037566847627349, guid: 4ef4fe3da4b4ba040a8e0dcb23769c85, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1904,16 +1908,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1278264978}
     m_Modifications:
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: brush.brushColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.b
-      value: 0.8705883
+      value: 0.7075472
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.g
-      value: 0.72156864
+      value: 0.548557
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: brush.brushColor.r
-      value: 0.32941177
+      value: 0.130162
       objectReference: {fileID: 0}
     - target: {fileID: 210276923786825951, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.y
