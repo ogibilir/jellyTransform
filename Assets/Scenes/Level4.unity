@@ -1079,6 +1079,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: dirtymachine
       objectReference: {fileID: 0}
+    - target: {fileID: 4132903152097901842, guid: fa356dabe7e16bd47a0376f58624af38, type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.010902455
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132903152097901842, guid: fa356dabe7e16bd47a0376f58624af38, type: 3}
+      propertyPath: brush.brushColor.g
+      value: 0.22083813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132903152097901842, guid: fa356dabe7e16bd47a0376f58624af38, type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.46226418
+      objectReference: {fileID: 0}
     - target: {fileID: 4401667192067951990, guid: fa356dabe7e16bd47a0376f58624af38, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3063,6 +3075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueColor
       objectReference: {fileID: 0}
+    - target: {fileID: 3590309179504532515, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59842be7bf1af5f4080c28d045b9e5da, type: 2}
     - target: {fileID: 3590309179504532517, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_RootOrder
       value: 10
