@@ -24,7 +24,7 @@ MonoBehaviour:
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK
+  androidKeystorePath: jelly.keystore
   iosURLSuffix: 
   appLinkSchemes:
   - list: []

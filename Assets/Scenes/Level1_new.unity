@@ -1879,6 +1879,14 @@ PrefabInstance:
       propertyPath: brush.brushColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: brush.brushHeightBlend
+      value: 0.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 210276923786825950, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
+      propertyPath: brush.brushNormalBlend
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 210276923786825951, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.62
@@ -1929,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3590309179504532517, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.44
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 3590309179504532517, guid: 44efbcb4b25e7ec4b81a92b979db37fd, type: 3}
       propertyPath: m_LocalPosition.y
